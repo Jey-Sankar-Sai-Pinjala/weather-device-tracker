@@ -1,0 +1,32 @@
+# render.yaml
+services:
+  - type: web
+    name: flask-backend
+    env: python
+    buildCommand: ""
+    startCommand: gunicorn app:app
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10
+    plan: free
+    repo: https://github.com/YOUR_USERNAME/YOUR_REPO
+    branch: main
+    buildFilter:
+      paths:
+        - backend/**
+    autoDeploy: true
+    rootDir: backend
+
+  - type: web
+    name: react-frontend
+    env: static
+    buildCommand: npm install && npm run build
+    staticPublishPath: build
+    plan: free
+    repo: https://github.com/YOUR_USERNAME/YOUR_REPO
+    branch: main
+    buildFilter:
+      paths:
+        - frontend/**
+    autoDeploy: true
+    rootDir: frontend
