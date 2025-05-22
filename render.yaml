@@ -8,7 +8,6 @@ services:
     envVars:
       - key: PYTHON_VERSION
         value: 3.10
-    plan: free
     repo: https://github.com/Jey-Sankar-Sai-Pinjala/weather-device-tracker.git
     branch: main
     buildFilter:
