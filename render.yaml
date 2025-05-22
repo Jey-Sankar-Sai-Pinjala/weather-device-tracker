@@ -21,7 +21,6 @@ services:
     env: static
     buildCommand: npm install && npm run build
     staticPublishPath: build
-    plan: free
     repo: https://github.com/Jey-Sankar-Sai-Pinjala/weather-device-tracker.git
     branch: main
     buildFilter:
